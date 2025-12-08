@@ -10,6 +10,7 @@ public class TeacherApplication {
 		SpringApplication.run(TeacherApplication.class, args);
 		
 		System.out.println("kgyig");
+		System.out.println("kgyig");
 		
 	}
 
