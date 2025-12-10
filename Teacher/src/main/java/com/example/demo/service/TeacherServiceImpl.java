@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.IdNotFound;
 import com.example.demo.model.Teacher;
 import com.example.demo.repository.TeacherRepository;
 
@@ -34,4 +35,13 @@ private TeacherRepository tr;
 		teach.setId(id);
 		tr.save(teach);
 		}
+	
+	public Teacher  search(Integer id) {
+		
+		if(!tr.existsById(id))
+			throw new IdNotFound("ID not found!!");
+		return tr.findById(id).get();
+		
+	}
+	
 	}
